@@ -1,0 +1,42 @@
+//Try insert your profile
+use "raynicka_ramadhana"
+db.profile.insertOne({
+  name: "raynicka",
+  address: {
+    street: "pedan",
+    city: "klaten",
+    state: "jawa tengah",
+    country: "indonesia"
+  },
+  hobbies: ["tenismeja"]
+})
+
+
+//Try get your profile
+
+db.profile.findOne()
+
+
+//Try update your profile
+
+db.profile.updateOne(
+  { name: "raynicka" },
+  {
+    $set: {
+      address: {
+        street: "update pedan",
+        city: "update klaten",
+        state: "update jawa tengah",
+        country: "update indonesia",
+      },
+      hobbies: ["update tenis meja"]
+    }
+  }
+)
+
+
+
+//Try delete your profile
+
+db.profile.deleteOne({ name: "raynicka" })
+
